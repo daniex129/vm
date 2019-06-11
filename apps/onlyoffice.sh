@@ -59,9 +59,6 @@ it to this server before you can run this script."
    exit 1
 fi
 
-# Check open ports with NMAP
-check_open_port 80 "$SUBDOMAIN"
-check_open_port 443 "$SUBDOMAIN"
 
 # Install Docker
 install_docker
