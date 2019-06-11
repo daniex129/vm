@@ -2,7 +2,7 @@
 # shellcheck disable=2034,2059
 true
 # shellcheck source=lib.sh
-NCDB=1 && FIRST_IFACE=1 && CHECK_CURRENT_REPO=1 . <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/master/lib.sh)
+NCDB=1 && FIRST_IFACE=1 && CHECK_CURRENT_REPO=1 . <(curl -sL https://raw.githubusercontent.com/daniex129/vm/master/lib.sh)
 unset FIRST_IFACE
 unset CHECK_CURRENT_REPO
 unset NCDB
@@ -192,7 +192,7 @@ Please also post this issue on: https://github.com/nextcloud/vm/issues"
 fi
 
 # shellcheck source=lib.sh
-NCDB=1 && CHECK_CURRENT_REPO=1 && NC_UPDATE=1 . <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/master/lib.sh)
+NCDB=1 && CHECK_CURRENT_REPO=1 && NC_UPDATE=1 . <(curl -sL https://raw.githubusercontent.com/daniex129/vm/master/lib.sh)
 unset NC_UPDATE
 unset CHECK_CURRENT_REPO
 unset NCDB
@@ -624,7 +624,7 @@ ROOTNEWPROFILE
 print_text_in_color "$ICyan" "Downloading all the latest app scripts to $SCRIPTS/apps..."
 mkdir -p $SCRIPTS/apps
 cd $SCRIPTS/apps
-check_command curl -s https://codeload.github.com/nextcloud/vm/tar.gz/master | tar -xz --strip=2 vm-master/apps
+check_command curl -s https://codeload.github.com/daniex129/vm/tar.gz/master | tar -xz --strip=2 vm-master/apps
 
 # Upgrade system
 print_text_in_color "$ICyan" "System will now upgrade..."
