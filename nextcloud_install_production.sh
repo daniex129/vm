@@ -359,11 +359,11 @@ sed -i "s|max_execution_time =.*|max_execution_time = 3500|g" $PHP_INI
 # max_input_time
 sed -i "s|max_input_time =.*|max_input_time = 3600|g" $PHP_INI
 # memory_limit
-sed -i "s|memory_limit =.*|memory_limit = 512M|g" $PHP_INI
+sed -i "s|memory_limit =.*|memory_limit = 1024M|g" $PHP_INI
 # post_max
 sed -i "s|post_max_size =.*|post_max_size = 1100M|g" $PHP_INI
 # upload_max
-sed -i "s|upload_max_filesize =.*|upload_max_filesize = 1000M|g" $PHP_INI
+sed -i "s|upload_max_filesize =.*|upload_max_filesize = 2000M|g" $PHP_INI
 
 # Set max upload in Nextcloud .user.ini
 configure_max_upload
