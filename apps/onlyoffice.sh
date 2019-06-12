@@ -5,7 +5,7 @@
 # shellcheck disable=2034,2059
 true
 # shellcheck source=lib.sh
-NC_UPDATE=1 && OO_INSTALL=1 . <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/master/lib.sh)
+NC_UPDATE=1 && OO_INSTALL=1 . <(curl -sL https://raw.githubusercontent.com/daniex129/vm/master/lib.sh)
 unset NC_UPDATE
 unset OO_INSTALL
 
@@ -33,20 +33,6 @@ msg_box "Before you start, please make sure that port 80+443 is directly forward
 # Get the latest packages
 apt update -q4 & spinner_loading
 
-# Check if Nextcloud is installed
-print_text_in_color "$ICyan" "Checking if Nextcloud is installed..."
-if ! curl -s https://"${NCDOMAIN//\\/}"/status.php | grep -q 'installed":true'
-then
-msg_box "It seems like Nextcloud is not installed or that you don't use https on:
-${NCDOMAIN//\\/}.
-Please install Nextcloud and make sure your domain is reachable, or activate SSL
-on your domain to be able to run this script.
-If you use the Nextcloud VM you can use the Let's Encrypt script to get SSL and activate your Nextcloud domain.
-When SSL is activated, run these commands from your terminal:
-sudo curl -sLO $APP/onlyoffice.sh
-sudo bash onlyoffice.sh"
-    exit 1
-fi
 
 # Check if $SUBDOMAIN exists and is reachable
 print_text_in_color "$ICyan" "Checking if $SUBDOMAIN exists and is reachable..."
